@@ -6,20 +6,17 @@ class Node:
         self.next = next
 
 def stalin_sort(l):
-    if l.next == None:
-        print(l.value)
-    elif l.value > l.next.value:
-        print(l.value)
-        l = l.next.next
-        stalin_sort(l)
-    else:
-        print(l.value)
-        l = l.next
-        stalin_sort(l)
+    if l.next != None:
+        if l.value > l.next.value:
+            l.next = l.next.next
+            stalin_sort(l)
 
+        else:
+            l = l.next
+            stalin_sort(l)
 
-node4 = Node(value=3, next = None)
-node3 = Node(value=2,next=node4)
-node2 = Node(value=1,next=node3)
-node1 = Node(value=1,next=node2)
+#node4 = Node(value=3, next = None)
+node3 = Node(value=20,next=None)
+node2 = Node(value=10,next=node3)
+node1 = Node(value=30,next=node2)
 stalin_sort(node1)
