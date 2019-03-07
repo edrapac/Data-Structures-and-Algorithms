@@ -14,9 +14,3 @@ def stalin_sort(l):
         else:
             l = l.next
             stalin_sort(l)
-
-#node4 = Node(value=3, next = None)
-node3 = Node(value=20,next=None)
-node2 = Node(value=10,next=node3)
-node1 = Node(value=30,next=node2)
-stalin_sort(node1)
