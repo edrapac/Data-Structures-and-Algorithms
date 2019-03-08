@@ -29,7 +29,7 @@ class Node:
 
 class Linked_List:
 	
-	def __init__(self,name, current_node = None, next_node = None, end = None):
+	def __init__(self,name, current_node = None, next_node = None, end = None,head = None):
 		self.name = name     #we just use this to keep track of the name of the linked list more than anything 
 		self.current_node = current_node
 		self.next_node = next_node
@@ -39,6 +39,9 @@ class Linked_List:
 	
 	def getCurrent_node(self):
 		return self.current_node
+
+	def setHead(self,head):
+		self.head = head
 
 	def add(self, node_to_add):   #adds node to next from current_node, not an insert! Next is always null, essentially an append that preserves order
 		if self.current_node == None:
@@ -54,6 +57,14 @@ class Linked_List:
 		else:
 			return None
 
+
+	def length(self):
+		self.current_node = self.head
+		counter =1
+		while self.current_node.next_node != None:
+			counter+=1
+			self.current_node =self.current_node.next_node
+		return counter
 
 	def setNext(self,next_node): #loads a node n+1 into the list but does not advance the current position pointer
 		self.current.setNext(next_node)
